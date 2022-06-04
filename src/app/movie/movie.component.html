@@ -1,0 +1,14 @@
+<p>movies works!</p>
+
+<table>
+  <tr>
+    <th>название</th>
+    <th>серия</th>
+    <th>количество</th>
+  </tr>
+  <tr *ngFor="let movie of movies">
+    <td>{{this.movie.name}}</td>
+    <td>{{this.movie.series}}</td>
+    <td>{{this.movie.episodes}}</td>
+  </tr>
+</table>
