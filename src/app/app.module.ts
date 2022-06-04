@@ -6,10 +6,8 @@ import {AppComponent} from './app.component';
 import {MessagesComponent} from './messages/messages.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {HttpClientModule} from "@angular/common/http";
-import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
-import {InMemoryDataService} from './in-memory-data.service';
-import { MovieComponent } from './movie/movie.component';
-import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import {MovieComponent} from './movie/movie.component';
+import {MovieDetailComponent} from './movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +22,6 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
-    )
   ],
   providers: [],
   bootstrap: [AppComponent]
