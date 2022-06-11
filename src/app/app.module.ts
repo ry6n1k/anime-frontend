@@ -8,6 +8,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MovieComponent} from './movie/movie.component';
 import {MovieDetailComponent} from './movie-detail/movie-detail.component';
+import {GenreComponent} from './genre/genre.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {MovieDetailComponent} from './movie-detail/movie-detail.component';
     MessagesComponent,
     DashboardComponent,
     MovieComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,
