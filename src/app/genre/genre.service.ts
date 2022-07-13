@@ -9,11 +9,17 @@ const endpoint = 'http://localhost:3000/genre'
   providedIn: 'root'
 })
 export class GenreService {
+  private url = 'http://localhost:3000/genre'
 
   constructor(private http: HttpClient) {
   }
 
   getGenres(): Observable<Genre[]> {
-    return this.http.get<Genre[]>(endpoint);
+    return this.http.get<Genre[]>(`${this.url}`);
+  }
+
+  createGenre(genre: Object): Observable<Object> {
+    return this.http.post(`${this.url}`, genre);
+    //return this.http.post(endpoint, genre);
   }
 }

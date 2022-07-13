@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GenreService} from "./genre.service";
+import {Genre} from "./genre";
 
 @Component({
   selector: 'app-genre',
@@ -8,6 +9,7 @@ import {GenreService} from "./genre.service";
 })
 export class GenreComponent implements OnInit {
   genres: any = [];
+  genre: Genre = new Genre();
 
   constructor(private genreService: GenreService) {
   }
@@ -22,5 +24,19 @@ export class GenreComponent implements OnInit {
       console.log(data);
       this.genres = data;
     })
+  }
+
+  save() {
+    this.genreService
+      .createGenre(this.genre)
+      .subscribe(data => {
+        console.log(data)
+        this.genre = new Genre()
+      })
+  }
+
+  onSubmit() {
+    this.save()
+    // потом сделать redirect
   }
 }
