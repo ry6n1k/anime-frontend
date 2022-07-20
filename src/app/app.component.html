@@ -1,8 +1,21 @@
-<h1>{{title}}</h1>
+<!-- <h1>{{title}}</h1>
 <nav>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/movie">Movies</a>
   <a routerLink="/genre">Genres</a>
 </nav>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
+<app-messages></app-messages> -->
+
+<div style="text-align: center">
+  <ul>
+    <li><a class="nav-link" routerLink="/" routerLinkActive="active">Home</a></li>
+    <li><a class="nav-link" routerLink="profile" routerLinkActive="active"></a>Profile</li>
+    <li style="float: right"><a class="nav-link" style="float: right" routerLink="login" routerLinkActive="active">Login</a></li>
+    <li style="float: right"><a class="nav-link" (click)="logout()" href="#">Logout</a></li>
+  </ul>
+  <div class="text-center">
+    <p>Angular Authentication with JWT tutorial</p>
+  </div>
+</div>
+<router-outlet></router-outlet>
