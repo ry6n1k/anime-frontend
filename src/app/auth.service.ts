@@ -6,14 +6,14 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  uri = 'https://localhost:3000/api';
-  token;
+  uri = 'https://localhost:3000/auth';
+  //token;
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(email: string, password: string) {
+  login(login: string, password: string) {
     this.http
-      .post(this.uri + '/authenticate', { email: email, password: password })
+      .post(this.uri + '/login', { login: login, password: password })
       .subscribe((resp: any) => {
         this.router.navigate(['profile']);
         localStorage.setItem('auth_token', resp.token);
