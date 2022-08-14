@@ -36,9 +36,10 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewComponent } from './view/view.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GenreComponent } from './genre/genre.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, ProfileComponent, ViewComponent],
+  declarations: [AppComponent, LoginComponent, ProfileComponent, GenreComponent, ViewComponent],
   imports: [
     BrowserModule,
     RouterModule,
