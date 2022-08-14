@@ -34,13 +34,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ViewComponent } from './view/view.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, ProfileComponent],
+  declarations: [AppComponent, LoginComponent, ProfileComponent, ViewComponent],
   imports: [
     BrowserModule,
     RouterModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
