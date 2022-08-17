@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { NgModule } from '@angular/core';
 // import { BrowserModule } from '@angular/platform-browser';
 // import { FormsModule } from '@angular/forms';
@@ -37,13 +37,24 @@ import { ProfileComponent } from './profile/profile.component';
 import { ViewComponent } from './view/view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenreComponent } from './genre/genre.component';
+import { MovieComponent } from './movie/movie.component';
+import { MovieAddComponent } from './movie-add/movie-add.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, ProfileComponent, GenreComponent, ViewComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    ProfileComponent,
+    GenreComponent,
+    MovieComponent,
+    ViewComponent,
+    MovieAddComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/', pathMatch: 'full' },

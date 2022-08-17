@@ -1,26 +1,21 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from 'rxjs';
-import {Movie} from "./movie";
-
-const endpoint = 'http://localhost:3000/';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Movie } from './movie';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MovieService {
-  movies: Movie[] = [];
+  private url = 'http://localhost:3000/movie';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(endpoint + 'movie');
+    return this.http.get<Movie[]>(`${this.url}`);
   }
 
-  /*getMovies(){
-    const movies = of(MOVIES);
-    return movies;
-  }*/
-
+  createMovie(movie: Object): Observable<Object> {
+    return this.http.post(`${this.url}`, movie);
+  }
 }

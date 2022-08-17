@@ -1,0 +1,22 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div>
+      <input type="text" placeholder="name" formControlName="name" />
+    </div>
+    <div>
+      <input type="text" placeholder="description" formControlName="description" />
+    </div>
+    <div>
+      <input type="text" placeholder="year" formControlName="year" />
+    </div>
+    <div>
+      <input type="text" placeholder="episodes" formControlName="episodes" />
+    </div>
+    <div>
+      <input type="text" placeholder="url" formControlName="url" />
+    </div>
+    <div>
+      <button class="btn btn-danger">Create</button>
+    </div>
+  </form>
+</div>

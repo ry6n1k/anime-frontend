@@ -3,12 +3,54 @@
 <table>
   <tr>
     <th>название</th>
-    <th>серия</th>
-    <th>количество</th>
+    <th>описание</th>
+    <th>год</th>
+    <th>серии</th>
+    <th></th>
   </tr>
   <tr *ngFor="let movie of movies">
-    <td>{{this.movie.name}}</td>
-    <td>{{this.movie.series}}</td>
-    <td>{{this.movie.episodes}}</td>
+    <td>{{ this.movie.name }}</td>
+    <td>{{ this.movie.description }}</td>
+    <td>{{ this.movie.year }}</td>
+    <td>{{ this.movie.episodes }}</td>
+    <td>{{ this.movie.url }}</td>
   </tr>
 </table>
+
+<!-- <form action="localhost:3000/movie" method="post">
+  <div class="spacer">
+    <label for="name">name</label>
+    <input type="text" [(ngModel)]="movie.name" />
+  </div>
+  <div class="spacer">
+    <label for="description">description</label>
+    <input type="text" [(ngModel)]="movie.description" />
+  </div>
+  <div class="spacer">
+    <label for="year">year</label>
+    <input type="number" [(ngModel)]="movie.year" />
+  </div>
+  <div class="spacer">
+    <label for="episodes">episodes</label>
+    <input type="number" [(ngModel)]="movie.episodes" />
+  </div>
+  <div class="spacer">
+    <label for="url">url</label>
+    <input type="text" [(ngModel)]="movie.url" />
+  </div>
+  <div class="spacer">
+    <input type="submit" value="добавить" />
+  </div>
+  <div class="spacer">
+    <button type="submit" (click)="save()">Добавить</button>
+  </div>
+</form> -->
+
+<form (ngSubmit)="onSubmit()">
+  <input type="text" name="name" [(ngModel)]="movie.name" />
+  <input type="text" name="description" [(ngModel)]="movie.description" />
+  <input type="number" name="year" [(ngModel)]="movie.year" />
+  <input type="number" name="episodes" [(ngModel)]="movie.episodes" />
+  <input type="text" name="url" [(ngModel)]="movie.url" />
+  <input type="submit" class="btn btn-primary" />
+</form>
